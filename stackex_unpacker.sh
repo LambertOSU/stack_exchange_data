@@ -1,4 +1,4 @@
-#!
+#!/bin/bash
 
 # this script unpacks the 7zip files
 # into appropriately named directories
