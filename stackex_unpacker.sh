@@ -10,10 +10,15 @@ do
   name="${file#*/}"
   name="${name%%.*}"
 
-  # make the directory
-  mkdir ./"$name"
+  # if the directory does not exist
+  if [ ! -d "$name" ];
+  then
 
-  # unzip the file
-  7z e "$file" -o./"$name"
+    # make the directory
+    mkdir ./"$name"
+
+    # unzip the file
+    7z e "$file" -o./"$name"
+  fi
 
 done
