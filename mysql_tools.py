@@ -16,28 +16,16 @@ import mysql.connector
 import pandas as pd
 
 ################################################################################
-# easy_sql
+# sql_connection
 
-# The easy_sql class connects to a mysql
-# database using the mysql connector and
-# executes queries. At present, the query
-# can be returned as a pandas DataFrame
-# or a NumPy array.
+# The sql_connection class facilitates access to a MySQL database
+# using mysql.connector.
 
 # METHODS
 #---------------------------------------------------------------
 # easy_sql.use_db()          -  Sets the DATABASE to be used in
 #                               the connection.
-#---------------------------------------------------------------
-# easy_sql.query_to_pandas() -  Executes a query given in string
-#                               format and returns the results
-#                               in a pandas DataFrame.
-#---------------------------------------------------------------
-# easy_sql.query_to_numpy()  -  Executes a query given in string
-#                               format and returns the results
-#                               in a NumPy array.
-#---------------------------------------------------------------
-class easy_sql:
+class sql_connection:
 
     # initialize the instance
     def __init__(self,db=None):
@@ -61,6 +49,29 @@ class easy_sql:
     # set the DATABASE
     def use_db(self,db):
         self.database = db
+################################################################################
+# easy_sql
+
+# The easy_sql class connects to a mysql
+# database and executes queries. At
+# present, the query can be returned as
+# a pandas DataFrame or a NumPy array.
+
+# METHODS
+#---------------------------------------------------------------
+# easy_sql.query_to_pandas() -  Executes a query given in string
+#                               format and returns the results
+#                               in a pandas DataFrame.
+#---------------------------------------------------------------
+# easy_sql.query_to_numpy()  -  Executes a query given in string
+#                               format and returns the results
+#                               in a NumPy array.
+#---------------------------------------------------------------
+class easy_sql(sql_connection):
+
+    # initialize the instance
+    def __init__(self,db=None):
+        sql_connection.__init__(self,db=None)
 
     # run the query and put the results
     # in a pandas DataFrame
