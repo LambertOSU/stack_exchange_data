@@ -23,8 +23,13 @@ import pandas as pd
 
 # METHODS
 #---------------------------------------------------------------
-# easy_sql.use_db()          -  Sets the DATABASE to be used in
-#                               the connection.
+# sql_connection._open()   -  Opens the connection to the database
+#---------------------------------------------------------------
+# sql_connection._close()  -  Closes the connection to the database
+#---------------------------------------------------------------
+# sql_connection.use_db()  -  Sets the DATABASE to be used in
+#                             the connection.
+#---------------------------------------------------------------
 class sql_connection:
 
     # initialize the instance
