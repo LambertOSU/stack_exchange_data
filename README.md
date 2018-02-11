@@ -8,4 +8,3 @@ File | Description
 **stackex_unpacker.sh** | Unzips the .7z files into appropriately named directories.
 **stack_xml_to_mysql.sql**  | Loads the XML files into MySQL.
 **batch_sql.sh** | Loads batches of data using *stack_xml_to_mysql.sql*.
-**mysql_tools.py** | Tools for running MySQL queries from python.
